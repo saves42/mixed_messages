@@ -1,6 +1,6 @@
 //random number generator
-function randomNumber(num) {
-    return Math.floor(Math.random() * num)
+function randomIndex(arr) {
+    return Math.floor(Math.random() * arr.length);
 }
 //4 arrays (one for each character type)
 const lowerCase = 'abcdefghijklmnopqrstuvwxyz'.split('');
@@ -13,9 +13,12 @@ characters.push(lowerCase, upperCase, numbers, symbols)
 //function that outputs an array of random characters
 function mixedCharacters(num) {
     let charArray = [];
-    let number = randomNumber();
+    let num1;
+    let num2;
     for (i = 0; i < num; i++) {
-
+        num1 = randomIndex(characters);
+        num2 = randomIndex(characters[num1])
+        charArray.push(characters[num1][num2])
     }
 }
 
